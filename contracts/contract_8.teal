@@ -1,0 +1,401 @@
+#pragma version 3
+int 0
+txn ApplicationID
+==
+bz not_creation
+
+	int 1
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 2
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 3
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 4
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 5
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 6
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 7
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 8
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 9
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 10
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 11
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 12
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 13
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 14
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 15
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 16
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 17
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 18
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 19
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 20
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 21
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 22
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 23
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 24
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 25
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 26
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 27
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 28
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 29
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 30
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 31
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 32
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 33
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 34
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 35
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 36
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 37
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 38
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 39
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 40
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 41
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 42
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 43
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 44
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 45
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 46
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 47
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 48
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 49
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 50
+	itob
+	byte "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+	app_global_put
+
+	int 0
+	bz finish
+
+not_creation:
+	txn OnCompletion
+	int DeleteApplication
+	==
+	bz update_app
+
+	global CreatorAddress
+	txn Sender
+	==
+	bz fail
+	int 1
+	return
+
+update_app:
+	int UpdateApplication
+	txn OnCompletion
+	==
+	bz color_change
+
+	global CreatorAddress
+	txn Sender
+	==
+	bz fail
+	int 1
+	return
+
+color_change:
+	txn ApplicationArgs 0
+	store 1
+
+	int 0
+	load 1
+	<
+	bz fail
+
+	load 1
+	int 101
+	<
+	bz fail
+
+	txn ApplicationArgs 1
+	store 2
+
+	int 0
+	load 2
+	<
+	bz fail
+
+	load 2
+	int 101
+	<
+	bz fail
+
+	txn ApplicationArgs 2
+	len
+	int 6
+	==
+	bz fail
+
+	int 8
+	load 1
+	int 1
+	-
+	int 5
+	/
+	int 1
+	+
+	==
+	bz fail
+
+update:
+	load 1
+	int 1
+	-
+	int 5
+	%
+	int 10
+	*
+	load 2
+	int 1
+	-
+	int 10
+	/
+	int 1
+	+
+	+
+	itob
+	store 3
+	load 3
+	app_global_get
+	store 4
+
+	load 2
+	int 1
+	-
+	int 10
+	%
+	int 1
+	+
+	store 5
+
+	load 5
+	int 1
+	-
+	int 6
+	*
+	store 6
+
+	load 5
+	int 1
+	-
+	int 6
+	*
+	int 6
+	+
+	store 7
+
+	load 3
+
+	load 4
+	int 0
+	load 6
+	substring3
+
+	txn ApplicationArgs 2
+	concat
+
+	load 4
+	load 7
+	int 60
+	substring3
+	concat
+
+	app_global_put
+
+finish:
+	int 1
+	return
+
+fail:
+	int 0
+	return
