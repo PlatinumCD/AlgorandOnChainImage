@@ -285,6 +285,7 @@ update_app:
 
 color_change:
 	txn ApplicationArgs 0
+	btoi
 	store 1
 
 	int 0
@@ -298,6 +299,7 @@ color_change:
 	bz fail
 
 	txn ApplicationArgs 1
+	btoi
 	store 2
 
 	int 0
