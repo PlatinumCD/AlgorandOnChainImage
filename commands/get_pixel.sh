@@ -20,7 +20,7 @@ cell=${CELL_IDS[$(( $cell - 1 ))]}
 #echo "Contract Cell: $cell"
 
 # Pixel Number = ((col - 1) % 10) + 1
-pixel=$((  (($2 - 1) % 10) + 1 ))
+pixel=$(( (($2 - 1) % 10) + 1 ))
 #echo "Pixel Number: $pixel"
 
 # Pixel Interval = [(p - 1) * 6, ((p - 1) * 6) + 6]
