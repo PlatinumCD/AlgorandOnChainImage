@@ -6,17 +6,11 @@ ACCOUNT_TWO="YOUR_SECOND_ACCOUNT_HERE"
 echo "Building contracts 1-10 with $ACCOUNT_ONE"
 for i in {1..10}
 do
-    goal app create --creator=$ACCOUNT_ONE --approval-prog=contract_$i.teal --clear-prog=clear.teal --global-byteslices=50 --global-ints=0 --local-byteslices=0 --local-ints=0 --out=create_one_$i.txn
+    goal app create --creator=$ACCOUNT_ONE --approval-prog=contract_$i.teal --clear-prog=clear.teal --global-byteslices=50 --global-ints=0 --local-byteslices=0 --local-ints=0 
 done
-
-cat create* > deploy_contracts_1.txn
-rm create*
 
 echo "Building contracts 11-20 with $ACCOUNT_TWO"
 for i in {11..20}
 do
-    goal app create --creator=$ACCOUNT_TWO --approval-prog=contract_$i.teal --clear-prog=clear.teal --global-byteslices=50 --global-ints=0 --local-byteslices=0 --local-ints=0 --out=create_two_$i.txn
+    goal app create --creator=$ACCOUNT_TWO --approval-prog=contract_$i.teal --clear-prog=clear.teal --global-byteslices=50 --global-ints=0 --local-byteslices=0 --local-ints=0 
 done
-
-cat create* > deploy_contracts_2.txn
-rm create*
