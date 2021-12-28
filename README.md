@@ -2,7 +2,7 @@
 <ul>
     <li>goal (In your PATH environment variable)</li>
     <li>jq (lightweight Command-line JSON Processor)</li>
-    <li>Python 3.7 with Numpy, PIL</li>
+    <li>Python 3.7+ with Numpy, PIL</li>
 </ul>
 
 <h2>OnChainImage Setup:</h2>
