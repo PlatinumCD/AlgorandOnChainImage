@@ -22,7 +22,7 @@
 <h2>Change the color of a pixel:</h2>
 <ul>
     <li>1. Run the ./change_pixel.sh script with 3 parameters: Row, Column, Color.</li>
-    Example: <code>./change_pixel 50 50 00FF00</code>
+    Example: <code>./change_pixel.sh 50 50 00FF00</code>
 </ul>
     
 <h2>Create the image:</h2>
@@ -34,5 +34,5 @@
 <h2>View the color of a single pixel:</h2>
 <ul>
     <li>Step 1. Run the ./get_pixel.sh script with 2 parameters: Row, Column.</li>
-    Example: <code>./get_pixel 50 50</code> returns <code>00FF00</code>
+    Example: <code>./get_pixel.sh 50 50</code> returns <code>00FF00</code>
 </ul>
