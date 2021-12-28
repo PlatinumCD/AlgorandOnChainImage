@@ -1,6 +1,6 @@
 <h2>Description</h2>
 
-The OnChainImage is built across 20 smart contracts.Each smart contract has 50 global keys and values. Each key/value pair contains data for 10 pixels. This provides enough global storage on the blockchain to create a 100x100 RGB image. An important objective in this project was to make interacting with the image as easy as possible. Each contract call requires a row, column, and color. The contracts verify that the row and column are associated with that contract. If the row and column are compatible with the contract, then the contract will allow a change of color.
+The OnChainImage is built across 20 smart contracts. Each smart contract has 50 global keys and values. Each key/value pair contains data for 10 pixels. This provides enough global storage on the blockchain to create a 100x100 RGB image. An important objective in this project was to make interacting with the image as easy as possible. Each contract call requires a row, column, and color. The contracts verify that the row and column are associated with that contract. If the row and column are compatible with the contract, then the contract will allow a change of color.
 
 Example dApp: https://app.algoloom.org/
 
